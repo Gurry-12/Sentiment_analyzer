@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sentiment Analyzer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/img/custom_image.jpg'); /* Background image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar, .footer {
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar {
+            top: 0;
+        }
+
+        .footer {
+            bottom: 0;
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem 0; /* Reduced padding */
+            font-size: 0.8rem; /* Smaller text size */
+        }
+
+        .custom-background {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            margin: 80px auto 80px; /* Space for fixed header and footer */
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-container textarea {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-container button {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Sentiment Analyzer</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="custom-background">
+        <h1>Analyze Sentiments</h1>
+        <p>Enter your text.</p>
+        <!-- Error Message -->
+        <p class="text-danger" id="error-message" style="display: none;">Please enter valid text.</p>
+        <form action="/result" method="POST" class="form-container">
+            <textarea name="user_input" class="form-control" rows="4" placeholder="Type your text here..."></textarea>
+            <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Sentiment Analyzer Project</p>
+    </footer>
+</body>
+</html>
