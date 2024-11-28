@@ -1,10 +1,23 @@
-I love this product! It exceeded my expectations. - Positive
-The service was terrible and I am very disappointed. - Negative
-This is the best experience I have ever had. - Positive
-I will never recommend this to anyone. It’s awful. - Negative
-The quality of the item is outstanding, and the delivery was on time. - Positive
-I hate how unreliable the system is. - Negative
-The food was delicious, and the staff was very friendly. - Positive
-The movie was boring and a complete waste of time. - Negative
-The design of this application is innovative and user-friendly. - Positive
-I regret spending money on this; it’s not worth it. - Negative
+Neutral Sentiments:
+
+    "The weather is mild today."
+    "I am going to the store."
+    "This is a test message."
+    "The meeting was scheduled for next week."
+    "I have no strong feelings about it."
+
+Positive Sentiments:
+
+    "I had a great time at the concert!"
+    "The movie was absolutely amazing!"
+    "I love spending time with my family."
+    "The project is going really well."
+    "I feel so happy and excited about this opportunity!"
+
+Negative Sentiments:
+
+    "I am feeling really down today."
+    "This weather is terrible."
+    "I’m very disappointed with the results."
+    "I didn’t like the service at the restaurant."
+    "I can’t believe how bad this situation is."

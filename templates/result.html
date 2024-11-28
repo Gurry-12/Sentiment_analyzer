@@ -27,6 +27,17 @@
         }
         .emoji-image {
             border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        canvas {
+            max-width: 200px; /* Reduced the chart size */
+            max-height: 200px;
         }
         footer {
             position: fixed;
@@ -35,8 +46,8 @@
             background-color: #343a40;
             color: white;
             text-align: center;
-            padding: 0.5rem 0; /* Reduced padding */
-            font-size: 0.8rem; /* Smaller text size */
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -58,25 +69,26 @@
             <blockquote class="blockquote bg-light p-3 rounded">{{ text }}</blockquote>
         </div>
 
-        <!-- Emoji and Pie Chart Stack -->
-        <div class="mt-4 d-flex flex-column align-items-center">
-            <!-- Emoji -->
+        <!-- Image Section -->
+        <div class="mt-4">
             <img 
-                src="/static/img/{{ 'happy.png' if sentiment == 'POSITIVE' else 'sad.png' }}" 
+                src="/static/img/{{ 'neutral.png' if sentiment == 0 else 'happy.png' if sentiment == 1 else 'sad.png' }}" 
                 alt="{{ sentiment }}" 
-                width="288" 
-                height="288"
-                class="emoji-image mb-3">
-            
-            <!-- Pie Chart -->
-            <canvas id="sentimentChart" width="288" height="288"></canvas>
+                width="200" 
+                height="200" 
+                class="emoji-image">
+        </div>
+
+        <!-- Centered Pie Chart -->
+        <div class="chart-container">
+            <canvas id="sentimentChart"></canvas>
         </div>
 
         <!-- Sentiment Text -->
         <div class="mt-4">
             <h3>Sentiment:</h3>
-            <h2 class="text-{{ 'success' if sentiment == 'POSITIVE' else 'danger' }}">
-                {{ sentiment }}
+            <h2 class="text-{{ 'warning' if sentiment == 0 else 'success' if sentiment == 1 else 'danger' }}">
+                {{ 'Neutral' if sentiment == 0 else 'Positive' if sentiment == 1 else 'Negative' }}
             </h2>
         </div>
 
@@ -97,13 +109,14 @@
         const sentimentChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: ['POSITIVE', 'NEGATIVE'],
+                labels: ['Neutral', 'Positive', 'Negative'],
                 datasets: [{
                     data: [
-                        {{ score if sentiment == 'POSITIVE' else 0 }},
-                        {{ score if sentiment == 'NEGATIVE' else 0 }}
+                        {{ neutral_score }},
+                        {{ positive_score }},
+                        {{ negative_score }}
                     ],
-                    backgroundColor: ['#28a745', '#dc3545'],
+                    backgroundColor: ['#ffc107', '#28a745', '#dc3545'],
                     borderWidth: 1
                 }]
             },
