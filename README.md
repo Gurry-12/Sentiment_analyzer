@@ -108,10 +108,10 @@ sentiment-analyzer/
 ## Screenshots
 
 ### Home Page
-![Home Page](https://via.placeholder.com/800x400.png?text=Add+Screenshot)
+<!-- ![Home Page](https://via.placeholder.com/800x400.png?text=Add+Screenshot) -->
 
 ### Sentiment Result
-![Result Page](https://via.placeholder.com/800x400.png?text=Add+Screenshot)
+<!-- ![Result Page](https://via.placeholder.com/800x400.png?text=Add+Screenshot)  -->
 
 ---
 
@@ -126,5 +126,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 **Gurpreet Singh**  
 - [GitHub](https://github.com/Gurry-12)
 - [LinkedIn](https://www.linkedin.com/in/gurpreet-singh57/)
-```
-
