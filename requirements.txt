@@ -7,7 +7,6 @@ fastjsonschema==2.21.0
 filelock==3.16.1
 Flask==3.1.0
 fsspec==2024.10.0
-gunicorn==23.0.0
 idna==3.10
 installer==0.7.0
 itsdangerous==2.2.0
@@ -44,4 +43,4 @@ torch==2.5.1
 tqdm==4.67.1
 transformers==4.46.3
 trove-classifiers==2024.10.21.16
-
+gunicorn
